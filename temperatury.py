@@ -26,7 +26,7 @@ ROWS = STEPS = 288
 NV = -273.15
 
 # wczytanie danych wygenerowanych przez Raspberry PI
-FILENAME = 'E:\\outer.csv'
+FILENAME = 'dane\\outer.csv'
 read_data = pd.read_csv(FILENAME, sep='[ ;]', decimal=',', names=['date', 'time', 'temp'], engine='python')
 
 # obliczenie ilosci wczytanych dni
