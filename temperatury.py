@@ -74,7 +74,13 @@ X = np.arange(1, DAYS+1, 1).reshape(DAYS, 1)
 Y = np.arange(1, STEPS+1, 1).reshape(1, STEPS)
 Z = data.values
 
-fig = plt.figure()
 ax = plt.axes(projection='3d')
-surf = ax.plot_surface(X, Y, Z, cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0)
+ax.set_ylabel('h')
+ax.set_zlabel('C')
+ax.set_yticklabels(['0','6','12','18','24'])
+ax.set_yticks((0, 72, 144, 216, 288))
+ax.set_xticklabels([read_data.iloc[0]['date'], read_data.iloc[-1]['date']])
+ax.set_xticks((1, DAYS))
+ax.plot_surface(X, Y, Z, cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0)
+
 plt.show()
