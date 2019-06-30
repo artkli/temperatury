@@ -59,10 +59,10 @@ while i < ROWS*COLUMNS:
             if end_value != NV:
                 break
             j += 1
-        delta = (end_value - begin_value) / (j - i + 1)
+        delta = (end_value - begin_value)/(j - i + 1)
         k = i
         while k <= j:
-            data.iat[item_to_coordinate(k, ROWS)] = begin_value + (k - i + 1) * delta
+            data.iat[item_to_coordinate(k, ROWS)] = begin_value + (k - i + 1)*delta
             k += 1
     begin_value = data.iat[item_to_coordinate(i, ROWS)]
     i += 1
@@ -75,7 +75,7 @@ Z = data.values
 ax = plt.axes(projection='3d')
 ax.set_ylabel('h')
 ax.set_zlabel('C')
-ax.set_yticklabels(['0','6','12','18','24'])
+ax.set_yticklabels(['0', '6', '12', '18', '24'])
 ax.set_yticks((0, 72, 144, 216, 288))
 ax.set_xticklabels([read_data.iloc[0]['date'], read_data.iloc[-1]['date']])
 ax.set_xticks((1, DAYS))
