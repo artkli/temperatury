@@ -1,2 +1,3 @@
 # temperatury
-prezentacja graficzna pomiarów
+
+prezentacja graficzna pomiarów temperatury przez Raspberry PI
