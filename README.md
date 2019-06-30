@@ -1,0 +1,2 @@
+# temperatury
+prezentacja graficzna pomiarów
