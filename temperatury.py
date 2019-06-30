@@ -48,7 +48,7 @@ for i in range(len(read_data)):
     data.at[row, column] = value
 
 # eksport macierzy
-# data.to_csv('dane\\macierz.csv', sep=';', decimal=',')
+data.to_csv('dane\\macierz.csv', sep=';', decimal=',')
 
 # wyeliminowanie pustych danych (przeprowadzenie lini prostej od ostatniej odczytanej wartosci do kolejnej)
 begin_value = end_value = data.iat[0, 0]
