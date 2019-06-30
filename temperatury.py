@@ -7,9 +7,7 @@ from mpl_toolkits.mplot3d import Axes3D
 
 
 # zaokraglenie czasu do wartosci round_to w dol
-def round_time(dt=None, round_to=300):
-    if dt is None:
-        dt = datetime.datetime.now()
+def round_time(dt, round_to=300):
     seconds = (dt.replace(tzinfo=None) - dt.min).seconds
     rounding = seconds // round_to * round_to
     return dt + datetime.timedelta(0, rounding-seconds, -dt.microsecond)
