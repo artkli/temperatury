@@ -31,6 +31,7 @@ read_data = pd.read_csv(FILENAME, sep='[ ;]', decimal=',', names=['date', 'time'
 first_date = datetime.datetime.strptime(read_data.iloc[0]['date'], '%d.%m.%Y')
 last_date = datetime.datetime.strptime(read_data.iloc[-1]['date'], '%d.%m.%Y')
 COLUMNS = DAYS = (last_date - first_date).days + 1
+LEN = ROWS*COLUMNS
 
 # zainicjowanie macierzy danych
 first_date_str = np.datetime64(datetime.datetime.strptime(read_data.iloc[0]['date'], '%d.%m.%Y'), 'D')
@@ -51,10 +52,10 @@ data.to_csv('dane\\macierz.csv', sep=';', decimal=',')
 # wyeliminowanie pustych danych (przeprowadzenie lini prostej od ostatniej odczytanej wartosci do kolejnej)
 begin_value = end_value = data.iat[0, 0]
 i = 1
-while i < ROWS*COLUMNS:
+while i < LEN:
     if data.iat[item_to_coordinate(i, ROWS)] == NV:
         j = i
-        while j < ROWS*COLUMNS:
+        while j < LEN:
             end_value = data.iat[item_to_coordinate(j, ROWS)]
             if end_value != NV:
                 break
