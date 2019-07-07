@@ -80,5 +80,7 @@ ax.set_yticks((0, 72, 144, 216, 288))
 ax.set_xticklabels([read_data.iloc[0]['date'], read_data.iloc[-1]['date']])
 ax.set_xticks((1, DAYS))
 ax.plot_surface(X, Y, Z, cmap=plt.cm.jet, rstride=1, cstride=1, linewidth=0)
+ax.view_init(elev=60, azim=180)
+ax.invert_yaxis()
 
 plt.show()
